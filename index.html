@@ -6,225 +6,157 @@
 <title>Tanveer Nasir - Flutter Developer</title>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
-/* Global Styles */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: 'Roboto', sans-serif;
-  background: #0b0c10;
-  color: #fff;
-  scroll-behavior: smooth;
-}
-a { text-decoration: none; color: #00ffea; }
+body { margin:0; font-family:'Roboto', sans-serif; background:#0b0c10; color:#fff; }
+a { text-decoration:none; color:#00ffea; }
+.container { max-width:1200px; margin:auto; padding:20px; }
 
-/* Hero Section */
-#hero {
-  height: 100vh;
-  background: radial-gradient(circle at center, #1f2833, #0b0c10);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-#hero h1 {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 48px;
-  color: #00ffea;
-  text-shadow: 2px 2px #ff00ff;
-}
-#hero p {
-  margin: 10px 0;
-  font-size: 16px;
-  color: #f5f5f5;
-  text-shadow: 1px 1px #ff00ff;
-}
-#hero button {
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: #ff00ff;
-  border: none;
-  border-radius: 10px;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-#hero button:hover {
-  background: #00ffea;
-  color: #000;
-}
-
-/* Sections */
-section {
-  padding: 80px 20px;
-  max-width: 1200px;
-  margin: auto;
-}
-h2 {
-  text-align: center;
-  font-size: 36px;
-  color: #00ffea;
-  margin-bottom: 40px;
-  position: relative;
-  text-shadow: 1px 1px #ff00ff;
-}
-
-/* Skills */
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-}
-.skill {
-  background: #1f2833;
-  border: 2px solid #00ffea;
-  padding: 12px 20px;
-  border-radius: 30px;
-  font-weight: bold;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.skill:hover {
-  transform: scale(1.2);
-  box-shadow: 0 0 20px #ff00ff;
-}
+/* Hero */
+#hero { padding:60px 20px; text-align:center; background: radial-gradient(circle at center, #1f2833, #0b0c10); }
+#hero h1 { font-family:'Press Start 2P', cursive; font-size:36px; color:#00ffea; text-shadow:2px 2px #ff00ff; }
+#hero p { margin:5px 0; font-size:16px; color:#f5f5f5; text-shadow:1px 1px #ff00ff; }
 
 /* Projects */
-.project { margin-bottom: 60px; }
-.project-header {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-.project-header img { width: 60px; height: 60px; border-radius: 12px; border: 2px solid #00ffea; }
-.project-header h3 { color: #00ffea; text-shadow: 1px 1px #ff00ff; }
-.project p { margin-bottom: 10px; color: #f5f5f5; }
-.project-images {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 15px;
-}
-.project-images img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 0 15px #ff00ff;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.project-images img:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 30px #00ffea;
-}
+.project { background:#1f2833; border:2px solid #00ffea; border-radius:12px; padding:15px; margin-bottom:40px; position:relative; }
+.project-header { display:flex; align-items:center; gap:15px; margin-bottom:10px; }
+.project-header img { width:60px; height:60px; border-radius:12px; border:2px solid #00ffea; }
+.project-header h3 { color:#00ffea; text-shadow:1px 1px #ff00ff; }
+.tech-stack { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:10px; }
+.tech-stack span { background:#00ffea; color:#000; padding:2px 8px; border-radius:6px; font-size:12px; font-weight:bold; }
 
-/* Contact */
-.contact { text-align: center; }
-.contact p { margin: 8px 0; font-size: 18px; color: #f5f5f5; }
-.contact a { color: #ff00ff; text-shadow: 1px 1px #00ffea; }
+.image-row { display:flex; flex-wrap:wrap; gap:10px; margin-top:10px; }
+.image-row img { width:calc(20% - 10px); border-radius:8px; box-shadow:0 0 10px #ff00ff; transition: transform 0.3s, box-shadow 0.3s; }
+.image-row img:hover { transform:scale(1.05); box-shadow:0 0 20px #00ffea; }
 
-/* Responsive */
-@media(max-width:768px){
-  #hero h1 { font-size: 32px; }
-  h2 { font-size: 28px; }
-  .project-header { flex-direction: column; text-align: center; }
+.view-images-btn {
+  position:absolute; top:15px; right:15px; background:#ff00ff; color:#fff; border:none;
+  padding:6px 10px; border-radius:6px; cursor:pointer; font-size:12px; font-weight:bold; text-shadow: 1px 1px #00ffea; transition:0.3s;
 }
+.view-images-btn:hover { background:#00ffea; color:#000; }
+
+/* Sections */
+h2 { text-align:center; font-size:28px; color:#00ffea; margin-bottom:20px; text-shadow:1px 1px #ff00ff; }
+.skills { display:flex; flex-wrap:wrap; justify-content:center; gap:15px; }
+.skill { background:#1f2833; border:2px solid #00ffea; padding:10px 15px; border-radius:30px; font-weight:bold; transition:0.3s; }
+.skill:hover { transform:scale(1.2); box-shadow:0 0 20px #ff00ff; }
+.contact { text-align:center; margin-top:20px; }
+.contact p { margin:8px 0; font-size:16px; color:#f5f5f5; }
+.contact a { color:#ff00ff; text-shadow:1px 1px #00ffea; }
+
+@media(max-width:768px){ .image-row img { width: calc(45% - 10px); } }
 </style>
 </head>
 <body>
 
-<!-- Hero Section -->
-<section id="hero">
-  <h1>Tanveer Nasir</h1>
-  <p>Flutter Developer | Android & iOS Apps</p>
-  <p>Building clean, scalable, and feature-rich mobile applications</p>
-  <button onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">View Projects</button>
-</section>
+<div class="container">
+  <!-- Hero -->
+  <section id="hero">
+    <h1>Tanveer Nasir</h1>
+    <p>Flutter Developer | Android & iOS Apps</p>
+    <p>Building clean, scalable, feature-rich mobile applications</p>
+  </section>
 
-<!-- About Me -->
-<section id="about">
-  <h2>About Me</h2>
-  <p>I’m a Flutter developer with experience building cross-platform mobile apps using Flutter, Dart, Provider, Firebase, REST APIs, and Google Maps. I specialize in creating responsive and polished applications while leading teams and mentoring interns. I enjoy solving complex problems and delivering high-quality apps.</p>
-</section>
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Featured Projects</h2>
 
-<!-- Skills -->
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="skills">
-    <div class="skill">Flutter</div>
-    <div class="skill">Dart</div>
-    <div class="skill">Provider</div>
-    <div class="skill">Firebase</div>
-    <div class="skill">REST APIs</div>
-    <div class="skill">Google Maps</div>
-    <div class="skill">Git</div>
-  </div>
-</section>
-
-<!-- Projects -->
-<section id="projects">
-  <h2>Projects</h2>
-
-  <!-- HireDrive -->
-  <div class="project">
-    <div class="project-header">
-      <img src="hiredrivelogo.jpeg" alt="HireDrive Icon">
-      <h3>HireDrive</h3>
+    <!-- HireDrive -->
+    <div class="project" data-images='["h1.jpeg","h2.jpeg","h3.jpeg","h4.jpeg","h5.jpeg"]'>
+      <div class="project-header">
+        <img src="hiredrivelogo.jpeg" alt="HireDrive Logo">
+        <h3>HireDrive</h3>
+      </div>
+      <p>Mobility platform with rides, driver hiring, wallet management, and OTP login.</p>
+      <div class="tech-stack">
+        <span>Flutter</span><span>Dart</span><span>Firebase</span><span>REST API</span>
+      </div>
+      <button class="view-images-btn">Click to view images</button>
+      <div class="image-row"></div>
     </div>
-    <p>Mobility platform with rides, driver hiring, wallet management, and OTP login.</p>
-    <p><strong>Tech Stack:</strong> Flutter, Dart, Firebase, REST API</p>
-    <div class="project-images">
-      <img src="h1.jpeg" alt="HireDrive Image 1">
-      <img src="h2.jpeg" alt="HireDrive Image 2">
-      <img src="h3.jpeg" alt="HireDrive Image 3">
-      <img src="h4.jpeg" alt="HireDrive Image 4">
-      <img src="h5.jpeg" alt="HireDrive Image 5">
-    </div>
-  </div>
 
-  <!-- DHAConnects -->
-  <div class="project">
-    <div class="project-header">
-      <img src="dhaconnectslogo.jpeg" alt="DHAConnects Icon">
-      <h3>DHAConnects</h3>
+    <!-- DHAConnects -->
+    <div class="project" data-images='["d1.jpeg","d2.jpeg","d3.jpeg","d4.jpeg"]'>
+      <div class="project-header">
+        <img src="dhaconnectslogo.jpeg" alt="DHAConnects Logo">
+        <h3>DHAConnects</h3>
+      </div>
+      <p>Real estate platform with property listings, map navigation, and role-based login.</p>
+      <div class="tech-stack">
+        <span>Flutter</span><span>Dart</span><span>Provider</span><span>Google Maps</span>
+      </div>
+      <button class="view-images-btn">Click to view images</button>
+      <div class="image-row"></div>
     </div>
-    <p>Real estate platform with property listings, map navigation, and role-based login.</p>
-    <p><strong>Tech Stack:</strong> Flutter, Dart, Provider, Google Maps</p>
-    <div class="project-images">
-      <img src="d1.jpeg" alt="DHAConnects Image 1">
-      <img src="d2.jpeg" alt="DHAConnects Image 2">
-      <img src="d3.jpeg" alt="DHAConnects Image 3">
-      <img src="d4.jpeg" alt="DHAConnects Image 4">
-     
-    </div>
-  </div>
 
-  <!-- Connecting Lives -->
-  <div class="project">
-    <div class="project-header">
-      <img src="c1.jpeg" alt="Connecting Lives Icon">
-      <h3>Connecting Lives</h3>
+    <!-- Connecting Lives -->
+    <div class="project" data-images='["c1.jpeg","c2.jpeg","c3.jpeg","c4.jpeg","c5.jpeg"]'>
+      <div class="project-header">
+        <img src="c1.jpeg" alt="Connecting Lives Logo">
+        <h3>Connecting Lives</h3>
+      </div>
+      <p>Cross-platform messaging app with Firebase Authentication, Firestore, and admin moderation.</p>
+      <div class="tech-stack">
+        <span>Flutter</span><span>Firebase</span><span>Firestore</span>
+      </div>
+      <button class="view-images-btn">Click to view images</button>
+      <div class="image-row"></div>
     </div>
-    <p>Cross-platform messaging app with Firebase Authentication, Firestore, and admin moderation.</p>
-    <p><strong>Tech Stack:</strong> Flutter, Firebase, Firestore</p>
-    <div class="project-images">
-      <img src="c1.jpeg" alt="Connecting Lives Image 1">
-      <img src="c2.jpeg" alt="Connecting Lives Image 2">
-      <img src="c3.jpeg" alt="Connecting Lives Image 3">
-      <img src="c4.jpeg" alt="Connecting Lives Image 4">
-      <img src="c5.jpeg" alt="Connecting Lives Image 5">
+  </section>
+
+  <!-- About Me -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m a Flutter developer with experience building cross-platform mobile apps using Flutter, Dart, Provider, Firebase, REST APIs, and Google Maps. I specialize in creating responsive and polished applications while leading teams and mentoring interns. I enjoy solving complex problems and delivering high-quality apps.</p>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill">Flutter</div>
+      <div class="skill">Dart</div>
+      <div class="skill">Provider</div>
+      <div class="skill">Firebase</div>
+      <div class="skill">REST APIs</div>
+      <div class="skill">Google Maps</div>
+      <div class="skill">Git</div>
     </div>
-  </div>
+  </section>
 
-</section>
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact">
+      <p>Email: <a href="mailto:tanveermughal619@gmail.com">tanveermughal619@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/tanveer-mughal-95952a240" target="_blank">linkedin.com/in/tanveer-mughal-95952a240</a></p>
+      <p>GitHub: <a href="https://github.com/TanveerMughal11" target="_blank">github.com/TanveerMughal11</a></p>
+    </div>
+  </section>
+</div>
 
-<!-- Contact -->
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="contact">
-    <p>Email: <a href="mailto:tanveermughal619@gmail.com">tanveermughal619@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/tanveer-mughal-95952a240" target="_blank">linkedin.com/in/tanveer-mughal-95952a240</a></p>
-    <p>GitHub: <a href="https://github.com/TanveerMughal11" target="_blank">github.com/TanveerMughal11</a></p>
-  </div>
-</section>
+<script>
+// Image toggle
+document.querySelectorAll('.project').forEach(project => {
+  const btn = project.querySelector('.view-images-btn');
+  const imageRow = project.querySelector('.image-row');
+  const images = JSON.parse(project.dataset.images);
+
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if(imageRow.style.display === 'flex') {
+      imageRow.style.display = 'none';
+      imageRow.innerHTML = '';
+    } else {
+      imageRow.style.display = 'flex';
+      imageRow.innerHTML = '';
+      images.forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        imageRow.appendChild(img);
+      });
+    }
+  });
+});
+</script>
 
 </body>
 </html>
